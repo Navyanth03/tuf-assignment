@@ -11,7 +11,7 @@ const SignIn= () => {
 
   const handleSignIn = async() => {
     try {
-      const data=await axios.post('http://localhost:5000/api/v1/admin/signin',{
+      const data=await axios.post('https://tuf-assignment-server.onrender.com/api/v1/admin/signin',{
         userName: userName,
         password
       })

@@ -36,7 +36,7 @@ const Dashboard= () => {
   useEffect(()=>{
     async function authenticate(){
       try {
-        await axios.get('http://localhost:5000/api/v1/admin/authenticate',{
+        await axios.get('https://tuf-assignment-server.onrender.com/api/v1/admin/authenticate',{
           headers:{
             Authorization:`Bearer ${localStorage.getItem('token')}`
           }
@@ -51,7 +51,7 @@ const Dashboard= () => {
 
   useEffect(()=>{
     async function db(){
-      const dbData:ApiResponse=await axios.get('http://localhost:5000/api/v1/banner/getbanner');
+      const dbData:ApiResponse=await axios.get('https://tuf-assignment-server.onrender.com/api/v1/banner/getbanner');
       setData(dbData.data.newBanner);
       const dbBanner:BannerData=dbData.data.newBanner;
       setTempVisible(dbBanner.isVisible);
@@ -69,7 +69,7 @@ const Dashboard= () => {
 
     const handleSave = async() => {
       try {
-        await axios.post('http://localhost:5000/api/v1/banner/updatebanner',{
+        await axios.post('https://tuf-assignment-server.onrender.com/api/v1/banner/updatebanner',{
           isVisible:tempVisible,
           title:tempTitle,
           timer:Number(tempTimer),

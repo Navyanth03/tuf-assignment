@@ -24,7 +24,7 @@ const Banner= () => {
 
   useEffect(()=>{
     async function db(){
-      const dbData:ApiResponse=await axios.get('http://localhost:5000/api/v1/banner/getbanner');
+      const dbData:ApiResponse=await axios.get('https://tuf-assignment-server.onrender.com/api/v1/banner/getbanner');
       const dbBanner:BannerData=dbData.data.newBanner;
       setData(dbBanner);
       setRemainingTime(Number(dbBanner.timer));
