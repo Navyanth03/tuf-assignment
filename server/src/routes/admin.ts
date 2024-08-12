@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import { z, ZodSchema } from 'zod';
 import jwt from 'jsonwebtoken';
-import JWT_PASSWORD from '../config';
+const JWT_PASSWORD = "ajsdghagsdaskdh"
 import { authMiddleware } from '../middleware/middleware';
 import { PrismaClient } from '@prisma/client';
 const prisma=new PrismaClient();
