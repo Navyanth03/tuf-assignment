@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import JWT_PASSWORD from '../config';
+const JWT_PASSWORD="ajsdghagsdaskdh";
 
 // Extend the Request interface to include userId
 interface CustomRequest extends Request {
