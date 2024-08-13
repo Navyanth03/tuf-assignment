@@ -52,8 +52,8 @@ const Dashboard= () => {
   useEffect(()=>{
     async function db(){
       const dbData:ApiResponse=await axios.get('https://tuf-assignment-server.onrender.com/api/v1/banner/getbanner');
-      setData(dbData.data.newBanner);
       const dbBanner:BannerData=dbData.data.newBanner;
+      setData(dbBanner);
       setTempVisible(dbBanner.isVisible);
       setTempTitle(dbBanner.title);
       setTempTimer(dbBanner.timer);
@@ -65,7 +65,7 @@ const Dashboard= () => {
 
     const handleToggle = () => {
         setTempVisible(prev => !prev);
-      };
+    };
 
     const handleSave = async() => {
       try {
@@ -81,7 +81,9 @@ const Dashboard= () => {
       }
     };
 
-    if(isLoading) return <div>Loading...</div>;
+    if(isLoading) return (
+      <div>Loading...</div>
+    );
 
     return (
       <div className='bg-black'>
